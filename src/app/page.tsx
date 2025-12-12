@@ -1,9 +1,9 @@
-import WeatherDashboard from '@/components/Weather/index';
+import Weather from '@/components/Weather';
 
 export default function Home() {
   return (
     <>
-      <WeatherDashboard city={'yogyakarta'}/>
+      <Weather city={'yogyakarta'}/>
     </>
     
   );
