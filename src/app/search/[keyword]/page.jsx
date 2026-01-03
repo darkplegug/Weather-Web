@@ -36,7 +36,7 @@ export default async function SearchPage ({params}) {
             <div className="p-4">
                 <Chart api={weather}/>
             </div>
-            <div className="p-4">
+            <div className="pb-4 px-4">
                 <AirQuality airQuality={airquality} location={location}/>
             </div>
         </>
