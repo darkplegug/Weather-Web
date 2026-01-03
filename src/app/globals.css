@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;   
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 14px;
+}
+
+.nav-item {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.nav-item:hover .tooltip {
+  opacity: 1;
+}
