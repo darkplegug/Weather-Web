@@ -19,7 +19,7 @@ export default async function SearchPage ({params}) {
     return (
         <> 
             <div className="h-screen grid grid-rows-[65%_35%]">
-                <div className="pt-20 pb-2 px-4 h-full">
+                <div className="pt-18 pb-2 px-4 h-full">
                     <ShowMap api={weather}/> 
                 </div>
 

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import { useRouter } from "next/navigation";
 
 type NavbarProps = {
   handleMap?: any
@@ -9,6 +10,7 @@ type NavbarProps = {
 
 export default function Navbar({ handleMap }: NavbarProps) {
     const [isOpen, setIsOpen] = useState(false)
+    const router = useRouter();
   
     const handleSearch = () => {
             setIsOpen((prevState) => !prevState)
@@ -22,15 +24,25 @@ export default function Navbar({ handleMap }: NavbarProps) {
         )
     }
 
+    const goHome = () => {
+    const city = localStorage.getItem("defaultCity");
+
+    if (!city) {
+        // fallback kalau belum ada default city
+        router.push("/");
+        return;
+      }
+
+      router.push(`/defaultcity/${encodeURIComponent(city)}`);
+    };
+
   return (
     <div>
       <div className="w-60 z-700 fixed top-4 left-1/2 transform -translate-x-1/2 h-12 rounded-lg bg-[#202020] flex justify-center items-center gap-2">
-        <Link href="/">
-          <button className="text-white px-3 py-1 hover:bg-gray-100 hover:text-black cursor-pointer text-md font-bold rounded-lg">
+          <button onClick={goHome} className="text-white px-3 py-1 hover:bg-gray-100 hover:text-black cursor-pointer text-md font-bold rounded-lg">
             {/* <HouseLine size={22} color="#f0f0f0" /> */}
             Home
           </button>        
-        </Link>
 
         <button onClick={handleSearch} className="text-white px-3 py-1 hover:bg-gray-100 hover:text-black cursor-pointer text-md font-bold rounded-lg">
           {/* <MagnifyingGlass size={22} color="#f0f0f0" /> */}
