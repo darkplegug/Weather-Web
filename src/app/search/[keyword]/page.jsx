@@ -8,6 +8,7 @@ import { GetApi } from "@/libs/api-libs";
 import ShowMap from "@/components/Map/ShowMap"
 import Chart from "@/components/Chart"
 import AirQuality from "@/components/Weather/AirQuality"
+import WeatherAlerts from "../../../components/Weather/WeatherAlerts";
 
 export default async function SearchPage ({params}) {
     const { keyword } = await params;
@@ -19,11 +20,11 @@ export default async function SearchPage ({params}) {
     return (
         <> 
             <div className="h-screen grid grid-rows-[65%_35%]">
-                <div className="pt-18 pb-2 px-4 h-full">
+                <div className="pt-18 px-4 h-full">
                     <ShowMap api={weather}/> 
                 </div>
 
-                <div className="flex overflow-x-auto mb-3">
+                <div className="flex overflow-x-auto pt-4 pb-2">
                     <HorizontalScroll>
                         <CardWeather api={weather} />
                         <WeekHistoryCard api={weather} />
@@ -33,11 +34,14 @@ export default async function SearchPage ({params}) {
                     </HorizontalScroll>
                 </div>
             </div>
-            <div className="p-4">
+            <div className="pb-4 px-4 pt-2">
                 <Chart api={weather}/>
             </div>
             <div className="pb-4 px-4">
                 <AirQuality airQuality={airquality} location={location}/>
+            </div>
+            <div className="px-4 pb-4">
+                <WeatherAlerts alerts={weather.alerts} />
             </div>
         </>
     );

@@ -72,9 +72,9 @@ export default function AirQuality({ airQuality, location }) {
   ];
 
   return (
-    <div className="w-full bg-[#202020] rounded-2xl shadow-md p-6 flex flex-col sm:flex-row md:flex-row gap-8">
-      {/* ================= LEFT : AQI RING ================= */}
-      <div className="flex flex-col items-center justify-center w-auto mb-2">
+    <div className="w-full bg-[#202020] rounded-2xl shadow-md p-6 flex flex-col gap-8">
+      {/* ring */}
+      <div className="flex flex-col items-center justify-center w-auto mb-2 mt-2">
         <svg width="160" height="160">
           <circle
             cx="80"
@@ -111,7 +111,7 @@ export default function AirQuality({ airQuality, location }) {
         </p>
       </div>
 
-      {/* ================= RIGHT : DETAILS ================= */}
+      {/* detail */}
       <div className="flex-1">
         <h3 className="text-lg font-bold text-white">
           Air Quality — {location.name}

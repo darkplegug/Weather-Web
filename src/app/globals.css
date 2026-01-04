@@ -44,3 +44,24 @@
 .nav-item:hover .tooltip {
   opacity: 1;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+  100% {
+    background-position: 450px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 25%,
+    #3a3a3a 37%,
+    #2a2a2a 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+

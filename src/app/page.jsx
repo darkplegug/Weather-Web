@@ -46,8 +46,6 @@ export default function Page() {
 
   return (
     <div className="min-h-screen flex items-center justify-center mx-4">
-      
-      {/* CENTER CARD */}
       <div className="w-105 rounded-2xl bg-[#202020] shadow-2xl p-10">
         
         <h1 className="text-2xl font-bold text-white mb-2 text-center">
@@ -58,7 +56,6 @@ export default function Page() {
           Choose your default city to see the weather
         </p>
 
-        {/* SEARCH */}
         <div className="relative">
           <input
             ref={searchRef}
