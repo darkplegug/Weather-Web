@@ -4,6 +4,7 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import cities from "@/data/cities.json";
+import Image from "next/image";
 
 export default function Page() {
   const searchRef = useRef(null);
@@ -45,14 +46,17 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center mx-4">
-      <div className="w-105 rounded-2xl bg-[#202020] shadow-2xl p-10">
-        
-        <h1 className="text-2xl font-bold text-white mb-2 text-center">
-          Wadehel
+  <div className="min-h-screen bg-gray-100 flex items-center justify-center px-6">
+    <div className="w-full max-w-6xl bg-[#202020] rounded-3xl shadow-xl grid grid-cols-1 md:grid-cols-2">
+
+      {/* LEFT SIDE */}
+      <div className="p-12 flex flex-col justify-center">
+        <h1 className="text-4xl font-bold mb-3 text-white">
+          Track Weather <br />
+          With <span className="text-white">TempTrack</span>
         </h1>
 
-        <p className="text-white/80 mb-6 text-center">
+        <p className="text-white mb-8">
           Choose your default city to see the weather
         </p>
 
@@ -62,20 +66,22 @@ export default function Page() {
             value={keyword}
             onChange={handleChange}
             onKeyDown={handleKeyDown}
-            placeholder="Search city..."
-            className="w-full bg-white text-black placeholder-gray-500 px-5 py-3 rounded-xl outline-none"
+            placeholder="Enter city"
+            className="w-full border text-white border-white rounded-lg px-4 py-3 mb-3 outline-none focus:ring-2 focus:ring-black"
           />
+
+          <button onClick={() => goToDefaultCity(keyword)} className="absolute right-4 top-3 text-white cursor-pointer" > <MagnifyingGlass size={22} /> </button>
 
           <button
             onClick={() => goToDefaultCity(keyword)}
-            className="absolute right-4 top-3 text-black"
+            className="w-full bg-white text-black py-3 rounded-lg font-medium cursor-pointer mt-2"
           >
-            <MagnifyingGlass size={22} />
+            See Weather →
           </button>
 
           {/* DROPDOWN */}
           {results.length > 0 && (
-            <div className="absolute z-50 mt-2 w-full max-h-52 overflow-y-auto rounded-xl bg-black/80 backdrop-blur-md">
+            <div className="absolute z-50 mt-2 w-full max-h-52 overflow-y-auto rounded-lg bg-white border shadow-lg">
               {results.map((city, id) => (
                 <div
                   key={id}
@@ -83,7 +89,7 @@ export default function Page() {
                     setKeyword(city.name);
                     goToDefaultCity(city.name);
                   }}
-                  className="px-4 py-3 text-white cursor-pointer hover:bg-white/10"
+                  className="px-4 py-3 text-black cursor-pointer hover:bg-gray-100"
                 >
                   {city.name}, {city.country}
                 </div>
@@ -91,8 +97,23 @@ export default function Page() {
             </div>
           )}
         </div>
-
       </div>
+
+      {/* RIGHT SIDE */}
+      <div className="hidden md:flex items-center justify-center p-8">
+        <div className="bg-white rounded-2xl shadow-lg w-full max-w-sm">
+          <Image
+            src="/images/bg.jpg"
+            alt="Hero Image"
+            width={700}
+            height={400}
+            className="rounded-2xl"
+          />
+        </div>
+      </div>
+
     </div>
+  </div>
+
   );
 }

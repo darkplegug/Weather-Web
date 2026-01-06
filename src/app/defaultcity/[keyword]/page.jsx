@@ -20,7 +20,7 @@ export default async function DefaultCityPage ({params}) {
 return (
     <> 
       <div className="h-screen grid grid-rows-[65%_35%]">
-        <div className="pt-18 px-4 h-full">
+        <div className="pt-4 px-4 h-full">
           <ShowMap api={weather}/> 
         </div>
 

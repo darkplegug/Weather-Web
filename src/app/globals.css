@@ -45,23 +45,18 @@
   opacity: 1;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -450px 0;
-  }
-  100% {
-    background-position: 450px 0;
-  }
+.loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,#202020 94%,#0000) top/16px 16px no-repeat,
+    conic-gradient(#0000 30%,#202020);
+  mask: radial-gradient(farthest-side,#0000 calc(100% - 16px),#000 0);
+  animation:s3 1s infinite linear;
 }
 
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    #2a2a2a 25%,
-    #3a3a3a 37%,
-    #2a2a2a 63%
-  );
-  background-size: 400% 100%;
-  animation: shimmer 1.4s infinite linear;
+@keyframes s3{ 
+  100%{transform: rotate(1turn)}
 }
 

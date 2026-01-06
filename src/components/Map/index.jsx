@@ -37,7 +37,7 @@ export default function Map({ lat, lon, weather }) {
 
   return (
     <div className="relative h-full w-full">
-      <div className="absolute z-500 top-4 left-1/2 transform -translate-x-1/2 bg-white rounded-lg shadow-md p-2 flex gap-2">
+      <div className="absolute z-500 bottom-4 left-31 transform -translate-x-1/2 bg-white rounded-lg shadow-md p-2 flex gap-2">
         <button
           onClick={() => setLayer("tmp2m")}
           className={`px-3 py-1 rounded text-sm ${
@@ -74,7 +74,7 @@ export default function Map({ lat, lon, weather }) {
 
       <MapContainer
         center={[lat, lon]}
-        zoom={6}
+        zoom={4}
         className="h-full w-full rounded-xl"
       >
         <TileLayer
