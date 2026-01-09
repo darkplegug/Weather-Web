@@ -3,8 +3,8 @@ import { ArrowUp, Compass } from "@phosphor-icons/react";
 
 export default function WindCard({ api }) {
     return (
-        <div className="flex flex-row gap-1"> 
-            <div className="w-45 p-4 shrink-0 rounded-md bg-[#202020] flex flex-col justify-between"> 
+        <div className="flex flex-row gap-1 h-51"> 
+            <div className="w-full p-4 rounded-md bg-[#202020] flex flex-col justify-between"> 
                 <h2 className="text-white text-md font-bold">Wind Velocity</h2>
                 <div className="flex flex-col">
                     <div className="flex flex-row items-baseline gap-2">
@@ -17,7 +17,7 @@ export default function WindCard({ api }) {
                     <ArrowUp size={32} color="#ebe6e6" />
                 </div>  
             </div>
-            <div className="w-45 p-4 shrink-0 rounded-md bg-[#202020] flex flex-col justify-between">
+            <div className="w-full p-4 rounded-md bg-[#202020] flex flex-col justify-between">
                 <h2 className="text-white text-md font-semibold">Wind Degree <br></br>& Wind Direction</h2>
                 <div className="flex justify-center items-center w-full">
                     <Compass size={70} color="#ebe6e6" />

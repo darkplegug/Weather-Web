@@ -45,14 +45,14 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-80">
       <input
         ref={searchRef}
         value={keyword}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="Search city..."
-        className="w-full border-2 bg-white text-black px-6 py-2 rounded-3xl"
+        className="w-full border-2 bg-white text-black px-6 py-2 rounded-md"
       />
 
       <button
@@ -64,7 +64,7 @@ export default function SearchBar() {
 
       {/* DROPDOWN */}
       {results.length > 0 && (
-        <div className="absolute z-50 mt-2 w-full max-h-60 overflow-y-auto rounded-md bg-[#202020] scrollbar-hide">
+        <div className="absolute z-50 mt-2 w-full max-h-60 overflow-y-auto rounded-md bg-white scrollbar-hide">
           {results.map((city, id) => (
             <div
               key={id}
@@ -72,7 +72,7 @@ export default function SearchBar() {
                 setKeyword(city.name);
                 goToSearch(city.name);
               }}
-              className="p-3 text-white cursor-pointer hover:bg-white/10"
+              className="p-3 text-black cursor-pointer hover:bg-gray-300"
             >
               {city.name}, {city.country}
             </div>

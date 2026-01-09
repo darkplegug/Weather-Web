@@ -2,24 +2,33 @@ import { IconMoonFilled, IconSunset2, IconSunset2Filled } from '@tabler/icons-re
 
 export default function AstroCard ({ api }) {
     return (
-        <div className="flex flex-row gap-1">
-            <div className="grid grid-rows-[49%_49%] gap-1">
+        <div className="flex flex-row gap-1 h-51">
+            <div className="grid grid-rows-[49%_49%] gap-1 w-1/2">
                 <div className="flex flex-row gap-2">
-                    <div className="w-40 p-4 rounded-md bg-[#202020] flex justify-center items-start flex-col relative">
-                        <h2 className='text-white text-xl font-bold'>Sunrise</h2>
-                        <h2 className='text-white text-md'>{api.forecast.forecastday[0].astro.sunrise}</h2>
-                        <IconSunset2 color="#f0ebeb" size={37} className='absolute right-4 flex justify-center items-center'/>
+                    <div className="w-full rounded-md bg-[#202020] flex justify-center items-center flex-row gap-1 py-2 px-2">
+                        <div>
+                            <h2 className='text-white text-xl font-bold'>Sunrise</h2>
+                            <h2 className='text-white text-md'>{api.forecast.forecastday[0].astro.sunrise}</h2>                            
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <IconSunset2 color="#f0ebeb" size={37} className='flex justify-center items-center'/>
+                        </div>
+                        
                     </div>                
                 </div>
                 <div className="flex flex-row gap-2">
-                    <div className="w-40 p-4 rounded-md bg-[#202020] flex justify-center items-start flex-col relative">
-                        <h2 className='text-white text-xl font-bold'>Sunset</h2>
-                        <h2 className='text-white text-md'>{api.forecast.forecastday[0].astro.sunset}</h2>
-                        <IconSunset2Filled color="#f0ebeb" size={37} className='absolute right-4 flex justify-center items-center'/>
-                    </div>  
+                    <div className="w-full p-4 rounded-md bg-[#202020] flex justify-center items-center flex-row gap-1">
+                        <div>
+                            <h2 className='text-white text-xl font-bold'>Sunset</h2>
+                            <h2 className='text-white text-md'>{api.forecast.forecastday[0].astro.sunset}</h2>                            
+                        </div>
+                        <div className='flex justify-center items-center'>
+                            <IconSunset2Filled color="#f0ebeb" size={37} className='flex justify-center items-center'/>
+                        </div>
+                    </div>
                 </div>
             </div>      
-            <div className="w-40 p-4 rounded-md bg-[#202020] flex justify-between flex-col">
+            <div className="w-1/2 p-4 rounded-md bg-[#202020] flex justify-between flex-col">
                 <div>
                     <h2 className='text-white text-2xl font-bold'>Moon</h2>
                     <IconMoonFilled color="#f0ebeb" size={40} />                    

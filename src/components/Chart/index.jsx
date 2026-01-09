@@ -25,7 +25,7 @@ export default function Chart({ api }) {
     <div className="max-w-full p-4 bg-[#202020] rounded-xl">
       <h1 className="text-xl font-bold mb-1 text-white">Weather Statistics</h1>
       <p className="text-sm text-white mb-4">Today in {api.location.name}</p>
-      <div className="">
+      <div>
         <WeatherSelector active={active} setActive={setActive} />
         <WeatherChart data={data} activeKey={active} />         
       </div>
