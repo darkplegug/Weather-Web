@@ -16,7 +16,7 @@ export default function LandCard({ api }) {
                 
                 <div>
                     <h2 className="text-2xl sm:text-4xl font-bold text-black text-right">DEW POINT</h2>
-                    <h2 className="text-2xl sm:text-3xl font-medium text-black text-right">{api.current.dewpoint_c}%</h2>                     
+                    <h2 className="text-2xl sm:text-3xl font-medium text-black text-right">{api.current.dewpoint_c}°C</h2>                     
                 </div>
             </div>
             <div className="h-1/2 w-full p-3 flex flex-row justify-between items-center"> 
